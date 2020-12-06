@@ -31,9 +31,11 @@ def clean_data(data):
     # Remove columns with more than 50% of nans
     cnans = data.shape[0] / 2
     data = data.dropna(thresh=cnans, axis=1)
+
     # Remove rows with more than 50% of nans
     rnans = data.shape[1] / 2
-    data = data.dropna(thresh=rnans, axis=0)
+    #data = data.dropna(thresh=rnans, axis=0)
+
     # Discretize based on quantiles
     data.loc[:, 'duration'] = pd.qcut(data['surveyduration'], 10)
     # Discretize based on values
