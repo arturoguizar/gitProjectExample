@@ -46,7 +46,7 @@ def clean_data(data):
     drows = {1: 'Manytimes', 2: 'Onetimebyday', 3: '5/6timesforweek',
              4: '4timesforweek', 5: '1/3timesforweek', 6: '1timeformonth',
              7: '1/trimestre', 8: 'Less', 9: 'Never'}
-    data.loc[:, 'Frequency'] = data['Frequency'].map(drows)
+    #data.loc[:, 'Frequency'] = data['Frequency'].map(drows)
     return data
 
 
