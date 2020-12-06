@@ -14,7 +14,11 @@ def clean_data(data):
     """ clean data
     """
     # Remove columns starts with vote
-    cols = [x for x in data.columns if x.find('vote') >= 0]
+    cols = []
+    for x in data.columns:
+        if x.find('vote') >= 0:
+            cols.append(x)
+
     data.drop(cols, axis=1, inplace=True)
     # Remove special characteres from columns
     data.loc[:, 'civility'] = data['civility'].replace('\.', '', regex=True)
