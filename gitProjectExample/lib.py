@@ -21,7 +21,7 @@ def clean_data(data):
 
     data.drop(cols, axis=1, inplace=True)
     # Remove special characteres from columns
-    data.loc[:, 'civility'] = data['civility'].replace('\.', '', regex=True)
+    data.loc[:, 'civility'] = data['civility'].replace(r'\.', '', regex=True)
     # Calculate Age from day of birth
     actual_year = datetime.datetime.now().year
     data.loc[:, 'Year_Month'] = pd.to_datetime(data.birthdate)
